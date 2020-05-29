@@ -1,0 +1,14 @@
+<!--miniprogram/pages/favorite/favorite.wxml-->
+<view class="video-card">
+  <view class="video-title">我的收藏</view>
+  <image class="favorite" src="/images/star-onclick.png"></image>
+  <view class="user-split"></view>
+  <view class='user-options' wx:for='{{videoList}}' wx:key='item.id'>
+    <view class='options'>
+      <navigator url="../videos/videos?_id={{item.video._id}}" class='course'>
+        <view class='name'>{{item.video.name}}</view>
+        <view class='time'>日期：{{item.createTime}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>

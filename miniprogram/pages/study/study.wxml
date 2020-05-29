@@ -1,0 +1,15 @@
+<!--pages/study/study.wxml-->
+<view class="video-card">
+  <view class="video-title">所有的习题将会显示在这里</view>
+
+  <view class="user-split"></view>
+  <view class='user-options' wx:for='{{courseList}}' wx:key='item.id'>
+    <view class='options'>
+      <navigator url="..?cid={{item.id}}" class='course'>
+        <view class='name'>{{item.name}}<image class="favorite" src="/images/books.png"></image></view>
+        
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class="more">更多习题敬请期待</view>

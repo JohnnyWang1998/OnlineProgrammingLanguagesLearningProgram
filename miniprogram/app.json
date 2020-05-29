@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/classes/classes",
+    "pages/videos/videos",
+    "pages/study/study",
+    "pages/user/user",
+    "pages/favorite/favorite"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "计小技家的课",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#5D5F64",
+    "selectedColor": "#5D5F64",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "课程",
+        "pagePath": "pages/classes/classes",
+        "iconPath": "images/videos.png",
+        "selectedIconPath": "images/videos-onclick.png"
+      },
+      {
+        "text": "习题",
+        "pagePath": "pages/study/study",
+        "iconPath": "images/book.png",
+        "selectedIconPath": "images/book-onclick.png"
+      },
+      {
+        "text": "我",
+        "pagePath": "pages/user/user",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-onclick.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

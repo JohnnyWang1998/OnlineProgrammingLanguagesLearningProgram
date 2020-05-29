@@ -1,0 +1,39 @@
+<!--pages/videos/videos.wxml-->
+<scroll-view>
+<video class="video" src='{{videoURL}}'></video>
+<view class="video-card">
+  <view class="option"><view class="option-title">{{title}}</view>
+    <view wx:if="{{favorite}}">
+      <image class="option-arrow" src="/images/star-onclick.png" bindtap="cancelFavorite"></image>
+    </view>
+    <view wx:else>
+      <image class="favorite" src="/images/star.png" bindtap="addFavorite"></image>
+    </view>
+  </view>
+  <view class="intro">课程介绍：{{intro}}</view>
+  <view class="split"></view>
+  <view class="video-title">课程目录</view>
+
+  <view class="page_bd page_bd_spacing">
+    <view class="kind-list">
+      <block wx:for-items="{{videoList}}" wx:key="{{item.id}}">
+        <view class="kind-list_item">
+          <view id="{{item.id}}" class="tui-flex kind-list_item-hd {{item.open ? 'kind-list_item-hd_show' : ''}}" bindtap="kindToggle">
+            <view class="tui-flex_item">{{item.name}}</view>
+          </view>
+          <view class="kind-list_item-bd {{item.open ? 'kind-list_item-bd_show' : ''}}">
+            <view class="tui-cells {{item.open ? 'tui-cells_show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <view data-gid='{{page._id}}' bindtap='nextVideo' class="tui-cell tui-cell_access">
+                  <view class="tui-cell_bd">{{page.name}}</view>
+                  <view class="tui-cell_ft tui-cell_ft_in-access"></view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+</scroll-view>
